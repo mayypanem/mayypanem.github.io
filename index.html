@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -16,21 +17,38 @@
     <section id="channels">
 
         <!--Headbar-->
-        <div class="headbar" style="align-items: end;">
-            <img alt="chatterApp Logo" src="https://ip.lfe.mw.tum.de/sections/moocus.png" height="56" style="background-color: #00838f;"/>
-            <h1 style="padding-bottom: 0.3em; margin-left: 0.3em; font-size: 20px;">chatter | app</h1>
+        <div class="headbar" style="display: flex; justify-content: space-between;">
+            <img alt="chatterApp Logo" src="https://ip.lfe.mw.tum.de/sections/moocus.png" height="56" id="logo" />
+            <h1 id="title">chatter | app</h1>
+            <a id="fab">+</a>
         </div>
 
         <!--Channel Lists-->
-            <div class="list-title">Favorites</div>
+        <div class="list-title">Favorites</div>
         <ul class="channel-list">
-            <li class="selected"><span>MeetUp with Hagrid</span> <span class="list-item-time">11:52</span></li>
-            <li><span>Great Hall Banquet</span> <span class="list-item-time">10:51</span></li>
+            <li class="selected">
+                <i class="material-icons">group</i>
+                <span class="channel-name">MeetUp with Hagrid</span>
+                <span class="list-item-time">11:52</span>
+            </li>
+            <li>
+                <i class="material-icons">group</i>
+                <span class="channel-name">Great Hall Banquet</span>
+                <span class="list-item-time">10:51</span>
+            </li>
         </ul>
         <div class="list-title">Regular</div>
         <ul class="channel-list">
-            <li><span>The_Quibbler</span> <span class="list-item-time">Yesterday</span></li>
-            <li><span>Triwizard Tournament</span> <span class="list-item-time">3 May 2018</span></li>
+            <li>
+                <i class="material-icons">group</i>
+                <span class="channel-name">The_Quibbler</span>
+                <span class="list-item-time">Yesterday</span>
+            </li>
+            <li>
+                <i class="material-icons">group</i>
+                <span class="channel-name">Triwizard Tournament</span>
+                <span class="list-item-time">3 May 2018</span>
+            </li>
         </ul>
     </section>
 
@@ -40,7 +58,8 @@
         <!--Headbar-->
         <div class="headbar" style="align-items: center;">
             <h1 display="inline" style="margin-left: 1em; margin-right: 0.5em; font-size: 20px;">MeetUp with Hagrid</h1>
-            <button>Favorite</button>
+            <div style="width: 76%;"></div>
+            <a style="cursor: pointer;"><i class="material-icons">favorite</i></a>
         </div>
 
         <!--Chat Area-->
@@ -48,61 +67,83 @@
 
             <!--Chat Messages-->
             <div class="message incoming">
-                <div class="message-content">
-                    <div class="message-username">
-                        ScabbersDaddy69
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <div class="message-username">
+                            ScabbersDaddy69
+                        </div>
+                        Harry, you’ve got to come and stay with us. I’ll fix it up with Mum and Dad, then I’ll call you.
+                        I
+                        know
+                        how to use a fellytone now.
                     </div>
-                    Harry, you’ve got to come and stay with us. I’ll fix it up with Mum and Dad, then I’ll call you. I
-                    know
-                    how to use a fellytone now.
                 </div>
-                <div class="message-timestamp">
+                <span class="message-timestamp">
                     11:45
-                </div>
+                </span>
             </div>
 
             <div class="message outgoing">
-                <div class="message-content">
-                    <div class="message-username">
-                        Hermione Granger
+                <div class="message-wrapper">
+                    <div class="message-content">
+                        <div class="message-username">
+                            Hermione Granger
+                        </div>
+                        Honestly, Ron. It's called a "telephone"! You should read a book once in a while B-)
                     </div>
-                    Honestly, Ron. It's called a "telephone"! You should read a book once in a while B-)
+                    <i class="material-icons">account_circle</i>
                 </div>
-                <div class="message-timestamp">
+                <span class="message-timestamp">
                     11:49
-                </div>
+                </span>
             </div>
 
             <div class="message incoming">
-                <div class="message-content">
-                    <div class="message-username">
-                        ScabbersDaddy69
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <div class="message-username">
+                            ScabbersDaddy69
+                        </div>
+                        When in doubt, go to the library, shocker!
                     </div>
-                    When in doubt, go to the library, shocker!
                 </div>
-                <div class="message-timestamp">
+                <span class="message-timestamp">
                     11:49
-                </div>
+                </span>
             </div>
 
             <div class="message incoming">
-                <div class="message-content">
-                    <div class="message-username">
-                        Seeker#1
+                <div class="message-wrapper">
+                    <i class="material-icons">account_circle</i>
+                    <div class="message-content">
+                        <div class="message-username">
+                            Seeker#1
+                        </div>
+                        Just keep Fred and George from bringing sweets this time or they'll lock me back in the closet
+                        under
+                        the stairs for the next schoolyear lololol
                     </div>
-                    Just keep Fred and George from bringing sweets this time or they'll lock me back in the closet under
-                    the stairs for the next schoolyear lololol
                 </div>
-                <div class="message-timestamp">
+                <span class="message-timestamp">
                     11:52
-                </div>
+                </span>
             </div>
         </div>
 
         <!--Chat Input-->
-        <div>
-            <input type="text" id="chat-input" placeholder="Type a message">
-            <button>Send</button>
+        <div id="input-area">
+            <i class="material-icons" id="emoticon-button">insert_emoticon</i>
+            <input
+              type="text"
+              id="message-input"
+              name="message-input"
+              minlength="1"
+              maxlength="500"
+              placeholder="... write your message"
+            />
+            <a class="material-icons button" id="send-button">send</a>
         </div>
 
     </section>
