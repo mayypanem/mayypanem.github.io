@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
     <!--Channels-->
-    <section id="channels">
+    <section id="channel-area">
 
         <!--Headbar-->
         <div class="headbar" style="display: flex; justify-content: space-between;">
@@ -26,12 +27,12 @@
         <!--Channel Lists-->
         <div class="list-title">Favorites</div>
         <ul class="channel-list">
-            <li class="selected">
+            <li class="selected" id="channel1" onclick="switchChannel(channel1)">
                 <i class="material-icons">group</i>
                 <span class="channel-name">MeetUp with Hagrid</span>
                 <span class="list-item-time">11:52</span>
             </li>
-            <li>
+            <li id="channel2" onclick="switchChannel(channel2)">
                 <i class="material-icons">group</i>
                 <span class="channel-name">Great Hall Banquet</span>
                 <span class="list-item-time">10:51</span>
@@ -39,12 +40,12 @@
         </ul>
         <div class="list-title">Regular</div>
         <ul class="channel-list">
-            <li>
+            <li id="channel3" onclick="switchChannel(channel3)">
                 <i class="material-icons">group</i>
                 <span class="channel-name">The_Quibbler</span>
                 <span class="list-item-time">Yesterday</span>
             </li>
-            <li>
+            <li id="channel4" onclick="switchChannel(channel4)">
                 <i class="material-icons">group</i>
                 <span class="channel-name">Triwizard Tournament</span>
                 <span class="list-item-time">3 May 2018</span>
@@ -53,13 +54,12 @@
     </section>
 
     <!--Chat-->
-    <section id="chat">
+    <section id="message-area">
 
         <!--Headbar-->
         <div class="headbar" style="align-items: center;">
-            <h1 display="inline" style="margin-left: 1em; margin-right: 0.5em; font-size: 20px;">MeetUp with Hagrid</h1>
-            <div style="width: 76%;"></div>
-            <a style="cursor: pointer;"><i class="material-icons">favorite</i></a>
+            <h1 id="channelName" display="inline" style="margin-left: 1em; margin-right: 0.5em; font-size: 20px;">MeetUp with Hagrid</h1>
+            <a style="cursor: pointer; margin-left: auto; margin-right: 2em;"><i id="favoriteIcon" class="material-icons">favorite</i></a>
         </div>
 
         <!--Chat Area-->
@@ -79,9 +79,7 @@
                         how to use a fellytone now.
                     </div>
                 </div>
-                <span class="message-timestamp">
-                    11:45
-                </span>
+                <span class="message-timestamp">11:45</span>
             </div>
 
             <div class="message outgoing">
@@ -94,9 +92,7 @@
                     </div>
                     <i class="material-icons">account_circle</i>
                 </div>
-                <span class="message-timestamp">
-                    11:49
-                </span>
+                <span class="message-timestamp">11:49</span>
             </div>
 
             <div class="message incoming">
@@ -109,9 +105,7 @@
                         When in doubt, go to the library, shocker!
                     </div>
                 </div>
-                <span class="message-timestamp">
-                    11:49
-                </span>
+                <span class="message-timestamp">11:49</span>
             </div>
 
             <div class="message incoming">
@@ -126,9 +120,7 @@
                         the stairs for the next schoolyear lololol
                     </div>
                 </div>
-                <span class="message-timestamp">
-                    11:52
-                </span>
+                <span class="message-timestamp">11:52</span>
             </div>
         </div>
 
@@ -143,10 +135,13 @@
               maxlength="500"
               placeholder="... write your message"
             />
-            <a class="material-icons button" id="send-button">send</a>
+            <a class="material-icons button" id="send-button" onclick="sendMessage()">send</a>
         </div>
 
     </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/channels.js"></script>
 </body>
 
 </html>

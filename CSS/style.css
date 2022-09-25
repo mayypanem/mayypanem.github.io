@@ -11,13 +11,13 @@ body {
     height: 100%;
 }
 
-#channels {
+#channel-area {
     width: 399px;
     height: 100vh;
     border-right: 1px solid #dddddd;
 }
 
-#chat {
+#message-area {
     left: 400px;
     width: calc(100% - 400px);
 }
@@ -135,10 +135,14 @@ li {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    width: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100vh - 2 * 66px);
 }
 
 .message {
-    width: 70%;
+    max-width: 70%;
 }
 
 .message-wrapper {
@@ -152,7 +156,8 @@ li {
 
 .outgoing {
     align-self: flex-end;
-    position: relative;
+    text-align: right;
+    /*position: relative;*/
 }
 
 .incoming .message-username {
@@ -169,6 +174,7 @@ li {
     margin: 1em;
     margin-bottom: 0;
     padding: 0.5em;
+    text-align: left;
 }
 
 .incoming .message-content {
@@ -195,8 +201,9 @@ li {
 }
 
 .outgoing .message-timestamp {
-    position:absolute;
-    margin-left: calc(70% + 3.8em);
+    margin-right: 3em;
+    /*position:absolute;
+    margin-left: calc(70% + 3.8em);*/
 }
 
 
@@ -219,6 +226,7 @@ li {
     background-color: #00838f;
     color: white;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 #send-button {
@@ -226,6 +234,7 @@ li {
     margin: auto;
     margin-left: 0;
     margin-right: 0.5em;
+    cursor: pointer;
 }
 
 #message-input {
