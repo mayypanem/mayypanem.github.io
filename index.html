@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="init()">
     <!--Channels-->
     <section id="channel-area">
 
@@ -26,31 +27,9 @@
 
         <!--Channel Lists-->
         <div class="list-title">Favorites</div>
-        <ul class="channel-list">
-            <li class="selected" id="channel1" onclick="switchChannel(channel1)">
-                <i class="material-icons">group</i>
-                <span class="channel-name">MeetUp with Hagrid</span>
-                <span class="list-item-time">11:52</span>
-            </li>
-            <li id="channel2" onclick="switchChannel(channel2)">
-                <i class="material-icons">group</i>
-                <span class="channel-name">Great Hall Banquet</span>
-                <span class="list-item-time">10:51</span>
-            </li>
-        </ul>
+        <ul class="channel-list" id="favorite-channels"></ul>
         <div class="list-title">Regular</div>
-        <ul class="channel-list">
-            <li id="channel3" onclick="switchChannel(channel3)">
-                <i class="material-icons">group</i>
-                <span class="channel-name">The_Quibbler</span>
-                <span class="list-item-time">Yesterday</span>
-            </li>
-            <li id="channel4" onclick="switchChannel(channel4)">
-                <i class="material-icons">group</i>
-                <span class="channel-name">Triwizard Tournament</span>
-                <span class="list-item-time">3 May 2018</span>
-            </li>
-        </ul>
+        <ul class="channel-list" id="regular-channels"></ul>
     </section>
 
     <!--Chat-->
@@ -58,90 +37,36 @@
 
         <!--Headbar-->
         <div class="headbar" style="align-items: center;">
-            <h1 id="channelName" display="inline" style="margin-left: 1em; margin-right: 0.5em; font-size: 20px;">MeetUp with Hagrid</h1>
-            <a style="cursor: pointer; margin-left: auto; margin-right: 2em;"><i id="favoriteIcon" class="material-icons">favorite</i></a>
+            <h1 id="channelName" display="inline" style="margin-left: 1em; margin-right: 0.5em; font-size: 20px;"></h1>
+            <a style="cursor: pointer; margin-left: auto; margin-right: 2em;"><i id="favoriteIcon"
+                    class="material-icons">favorite</i></a>
         </div>
 
         <!--Chat Area-->
         <div id="chat-area">
-
-            <!--Chat Messages-->
-            <div class="message incoming">
-                <div class="message-wrapper">
-                    <i class="material-icons">account_circle</i>
-                    <div class="message-content">
-                        <div class="message-username">
-                            ScabbersDaddy69
-                        </div>
-                        Harry, you’ve got to come and stay with us. I’ll fix it up with Mum and Dad, then I’ll call you.
-                        I
-                        know
-                        how to use a fellytone now.
-                    </div>
-                </div>
-                <span class="message-timestamp">11:45</span>
-            </div>
-
-            <div class="message outgoing">
-                <div class="message-wrapper">
-                    <div class="message-content">
-                        <div class="message-username">
-                            Hermione Granger
-                        </div>
-                        Honestly, Ron. It's called a "telephone"! You should read a book once in a while B-)
-                    </div>
-                    <i class="material-icons">account_circle</i>
-                </div>
-                <span class="message-timestamp">11:49</span>
-            </div>
-
-            <div class="message incoming">
-                <div class="message-wrapper">
-                    <i class="material-icons">account_circle</i>
-                    <div class="message-content">
-                        <div class="message-username">
-                            ScabbersDaddy69
-                        </div>
-                        When in doubt, go to the library, shocker!
-                    </div>
-                </div>
-                <span class="message-timestamp">11:49</span>
-            </div>
-
-            <div class="message incoming">
-                <div class="message-wrapper">
-                    <i class="material-icons">account_circle</i>
-                    <div class="message-content">
-                        <div class="message-username">
-                            Seeker#1
-                        </div>
-                        Just keep Fred and George from bringing sweets this time or they'll lock me back in the closet
-                        under
-                        the stairs for the next schoolyear lololol
-                    </div>
-                </div>
-                <span class="message-timestamp">11:52</span>
-            </div>
+            <p id="select-channel">Select a channel to start messaging.</p>
         </div>
 
         <!--Chat Input-->
         <div id="input-area">
             <i class="material-icons" id="emoticon-button">insert_emoticon</i>
-            <input
-              type="text"
-              id="message-input"
-              name="message-input"
-              minlength="1"
-              maxlength="500"
-              placeholder="... write your message"
-            />
+            <input type="text" id="message-input" name="message-input" minlength="1" maxlength="500"
+                placeholder="... write your message" />
             <a class="material-icons button" id="send-button" onclick="sendMessage()">send</a>
+        </div>
+        <div id="emoji-area">
+            <div id="emoji-header">
+                <span>Emojis</span>
+                <a class="material-icons button" id="close-emoticon-button">cancel</a>
+            </div>
+            <div id="emoji-list"></div>
         </div>
 
     </section>
 
     <script src="js/main.js"></script>
     <script src="js/channels.js"></script>
+    <script src="js/messages.js"></script>
 </body>
 
 </html>
