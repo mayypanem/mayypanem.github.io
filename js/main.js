@@ -115,6 +115,7 @@ function sendMessage() {
       const message = new Message(myUserName, own, text, channelID);
       console.log("New message: ", message);
       selectedChannel.messages.push(message);
+      selectedChannel.latestMessage = "" + message.createdOn.toLocaleTimeString("de-DE", {hour: "numeric", minute: "numeric"});
       document.getElementById("message-input").value = "";
       showMessages();
       displayChannels();
